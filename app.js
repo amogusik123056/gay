@@ -12,6 +12,15 @@ let passaftreg = ""
 reg.addEventListener ("click", () => {
     logaftreg = log.value
     passaftreg = pass.value
+    if (logaftreg == "") {
+        alert ("вы не ввели логин или пароль")
+    }
+    else if (passaftreg == "") {
+      alert ("вы не ввели логин или пароль")  
+    }
+    else { 
+        alert("регистрация прошла успешно!")
+    }
 })  
 
 checkButton.addEventListener("click", () => {
@@ -23,12 +32,21 @@ checkButton.addEventListener("click", () => {
      (login === "kirill" && password === "54321")||
      (login === "lev" && password === "smolkin")||
      (login == logaftreg && password == passaftreg)){
+            if (passwordInput == "") {
+        alert ("вы не ввели логин или пароль")
+    }
+    else if (login == "") {
+      alert ("вы не ввели логин или пароль")  
+    }
+    else if (login || passwordInput !="" ) { 
+    
     
     message.textContent = "Добро пожаловать, " + login + "!"
     message.style.color = "green"
   } 
-  else {
+  else if (loginInput || passwordInput !=login || password ) {
     message.textContent = "Неверный логин или пароль!"
     message.style.color = "red"
   }
+     } // я хз почему не работает(((((
 })
